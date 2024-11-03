@@ -1,8 +1,10 @@
 ﻿using Factory.Kit;
 using Feature.Input.Component;
+using Feature.Tap.Behaviour;
 using Feature.Tap.Component;
 using Infrastructure.ECS;
 using Leopotam.EcsLite;
+using UnityEngine;
 using Zenject;
 
 namespace Feature.Tap.Factory
@@ -35,6 +37,14 @@ namespace Feature.Tap.Factory
 				.Add<TapTarget>()
 				;
 			return e;
+		}
+
+		public TapFX CreateTapFX(Vector3 pos, int numText)
+		{
+			var prefab = _kit.AssetProvider.TapFX();
+			var tapFx = _kit.InstantiateService.Instantiate<TapFX>(prefab, pos);
+			tapFx.SetNum(numText);
+			return tapFx;
 		}
 	}
 }

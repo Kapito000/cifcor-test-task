@@ -8,8 +8,8 @@ namespace Input.Character
 	public sealed class TouchHandler : ITouch, IDisposable
 	{
 		[Inject] Controls _controls;
-		
-		Vector2 _screenPos;
+
+		InputAction _screenPos;
 
 		public event Action<Vector2> Taped;
 
@@ -17,7 +17,7 @@ namespace Input.Character
 		void Construct()
 		{
 			_controls.Touch.Tap.performed += OnTapPerformed;
-			_controls.Touch.ScreenPos.performed += OnScreenPosChanged;
+			_screenPos = _controls.Touch.ScreenPos;
 		}
 
 		public void Enable()
@@ -33,17 +33,12 @@ namespace Input.Character
 		public void Dispose()
 		{
 			_controls.Touch.Tap.performed -= OnTapPerformed;
-			_controls.Touch.ScreenPos.performed -= OnScreenPosChanged;
 		}
 
-		void OnScreenPosChanged(InputAction.CallbackContext context)
-		{
-			_screenPos = context.ReadValue<Vector2>();
-		}
-		
 		void OnTapPerformed(InputAction.CallbackContext context)
 		{
-			Taped?.Invoke(_screenPos);
+			var pos = _screenPos.ReadValue<Vector2>();
+			Taped?.Invoke(pos);
 		}
 	}
 }

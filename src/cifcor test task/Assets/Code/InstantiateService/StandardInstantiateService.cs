@@ -12,6 +12,15 @@ namespace InstantiateService
 			where TComponent : Component =>
 			_container.InstantiatePrefabForComponent<TComponent>(prefab);
 
+		public TComponent Instantiate<TComponent>(Object prefab, Vector3 pos)
+			where TComponent : Component
+		{
+			return _container
+				.InstantiatePrefabForComponent<TComponent>(
+					prefab, pos, quaternion.identity, null);
+		}
+
+
 		public GameObject Instantiate(Object prefab)
 		{
 			var instance = _container.InstantiatePrefab(prefab);

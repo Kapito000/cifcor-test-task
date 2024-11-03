@@ -21,7 +21,8 @@ namespace Feature.Wallet.System
 			foreach (var wallet in _walletFilter.Value)
 			{
 				_wallet.SetEntity(wallet);
-				_wallet.AppendCurrency(_gameBalance.AccrualByTap);
+				var value = _wallet.ChangeBalanceRequest();
+				_wallet.AppendCurrency(value);
 				_wallet.Remove<ChangeBalanceRequest>();
 			}
 		}

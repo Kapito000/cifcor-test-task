@@ -10,7 +10,6 @@ namespace Feature.Tap.System
 {
 	public sealed class TapSystem : IEcsRunSystem
 	{
-		[Inject] EntityWrapper _target;
 		[Inject] EntityWrapper _wallet;
 		[Inject] IGameBalance _gameBalance;
 
@@ -23,10 +22,7 @@ namespace Feature.Tap.System
 			foreach (var wallet in _walletFilter.Value)
 			{
 				_wallet.SetEntity(wallet);
-				_wallet.ChangeWalletBalanceRequest(_gameBalance.AccrualByTap);
-				
-				_target.SetEntity(target);
-				_target.Remove<Taped>();
+				_wallet.ReplaceChangeWalletBalanceRequest(_gameBalance.AccrualByTap);
 			}
 		}
 	}

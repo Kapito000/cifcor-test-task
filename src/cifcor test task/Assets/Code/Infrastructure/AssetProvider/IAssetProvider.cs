@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Feature.Tap.Behaviour;
+using UnityEngine;
 using UnityEngine.EventSystems;
 
 namespace Infrastructure.AssetProvider
@@ -8,5 +9,6 @@ namespace Infrastructure.AssetProvider
 		Canvas HudRoot();
 		EventSystem EventSystem();
 		GameObject TapTarget();
+		TapFX TapFX();
 	}
 }

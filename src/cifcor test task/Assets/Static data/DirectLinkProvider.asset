@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc53c414784741aba87337e8fe708f13, type: 3}
   m_Name: DirectLinkProvider
   m_EditorClassIdentifier: 
+  _tapFX: {fileID: -5408110868214474363, guid: 16962c293bf5d4247a1a680a194f8598, type: 3}
   _tapTarget: {fileID: 2811409064864479586, guid: 707a3d0fc4d619548b1a10b0b95b3575, type: 3}
   _hudRoot: {fileID: 8017098716089676229, guid: faa23bd9d87b9194dbb9532caf1f2fdb, type: 3}
   _eventSystem: {fileID: 176851465483218010, guid: a3c37fa5708cd3944a3f5bb8921fd59e, type: 3}

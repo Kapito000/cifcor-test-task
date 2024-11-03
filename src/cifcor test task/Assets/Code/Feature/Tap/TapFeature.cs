@@ -10,10 +10,14 @@ namespace Feature.Tap
 			AddInit<CreateTapHandler>();
 			AddInit<CreateTapTarget>();
 			AddInit<CreateAutoTap>();
+			
 			AddUpdate<ProseccTapInputSystem>();
-			AddUpdate<AutoTapTimerSystem>();
-			AddUpdate<AutoTapSystem>();
+			// AddUpdate<AutoTapTimerSystem>();
+			// AddUpdate<AutoTapSystem>();
 			AddUpdate<TapSystem>();
+			AddUpdate<TapFxSystem>();
+			
+			AddCleanup<Cleanup>();
 		}
 	}
 }

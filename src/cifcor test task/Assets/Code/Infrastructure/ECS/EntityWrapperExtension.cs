@@ -124,10 +124,23 @@ namespace Infrastructure.ECS
 			walletCurrency.Value += accruals;
 		}
 
-		public EntityWrapper ChangeWalletBalanceRequest(int value)
+		public EntityWrapper ReplaceChangeWalletBalanceRequest(int value)
 		{
 			ref var request = ref ReplaceComponent<ChangeBalanceRequest>();
-			request.Value += value;
+			request.Value = value;
+			return this;
+		}
+
+		public int ChangeBalanceRequest()
+		{
+			ref var changeBalanceRequest = ref Get<ChangeBalanceRequest>();
+			return changeBalanceRequest.Value;
+		}
+
+		public EntityWrapper SetChangeBalanceRequest(int value)
+		{
+			ref var changeBalanceRequest = ref Get<ChangeBalanceRequest>();
+			changeBalanceRequest.Value = value;
 			return this;
 		}
 
