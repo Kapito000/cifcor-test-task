@@ -9,10 +9,12 @@ namespace Infrastructure.AssetProvider
 		fileName = nameof(DirectLinkProvider))]
 	public sealed class DirectLinkProvider : ScriptableObject, IAssetProvider
 	{
+		[SerializeField] GameObject _tapTarget;
 		[Header("UI")]
-		[SerializeField] EventSystem _eventSystem;
 		[SerializeField] Canvas _hudRoot;
+		[SerializeField] EventSystem _eventSystem;
 
+		public GameObject TapTarget() => _tapTarget;
 		public Canvas HudRoot() => _hudRoot;
 		public EventSystem EventSystem() => _eventSystem;
 	}

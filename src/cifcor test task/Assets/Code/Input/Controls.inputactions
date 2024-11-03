@@ -18,11 +18,22 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "fd3097cf-2d1d-427c-8ea4-8cbcc6313035",
-                    "path": "<Touchscreen>/primaryTouch/position",
+                    "id": "25b75c27-b7a2-4155-a6af-582f1642d524",
+                    "path": "<Touchscreen>/position",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Touchscreen",
+                    "action": "Tap",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "dbc2d636-3a33-45b0-a3b1-ce6447c54222",
+                    "path": "<Pointer>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
                     "action": "Tap",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -32,11 +43,11 @@
     ],
     "controlSchemes": [
         {
-            "name": "Touchscreen",
-            "bindingGroup": "Touchscreen",
+            "name": "Pointer",
+            "bindingGroup": "Pointer",
             "devices": [
                 {
-                    "devicePath": "<Touchscreen>",
+                    "devicePath": "<Pointer>",
                     "isOptional": false,
                     "isOR": false
                 }

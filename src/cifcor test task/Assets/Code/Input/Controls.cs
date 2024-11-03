@@ -42,11 +42,22 @@ namespace Input
             ""bindings"": [
                 {
                     ""name"": """",
-                    ""id"": ""fd3097cf-2d1d-427c-8ea4-8cbcc6313035"",
-                    ""path"": ""<Touchscreen>/primaryTouch/position"",
+                    ""id"": ""25b75c27-b7a2-4155-a6af-582f1642d524"",
+                    ""path"": ""<Touchscreen>/position"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Touchscreen"",
+                    ""action"": ""Tap"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""dbc2d636-3a33-45b0-a3b1-ce6447c54222"",
+                    ""path"": ""<Pointer>/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
                     ""action"": ""Tap"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -56,11 +67,11 @@ namespace Input
     ],
     ""controlSchemes"": [
         {
-            ""name"": ""Touchscreen"",
-            ""bindingGroup"": ""Touchscreen"",
+            ""name"": ""Pointer"",
+            ""bindingGroup"": ""Pointer"",
             ""devices"": [
                 {
-                    ""devicePath"": ""<Touchscreen>"",
+                    ""devicePath"": ""<Pointer>"",
                     ""isOptional"": false,
                     ""isOR"": false
                 }
@@ -179,13 +190,13 @@ namespace Input
             }
         }
         public TouchActions @Touch => new TouchActions(this);
-        private int m_TouchscreenSchemeIndex = -1;
-        public InputControlScheme TouchscreenScheme
+        private int m_PointerSchemeIndex = -1;
+        public InputControlScheme PointerScheme
         {
             get
             {
-                if (m_TouchscreenSchemeIndex == -1) m_TouchscreenSchemeIndex = asset.FindControlSchemeIndex("Touchscreen");
-                return asset.controlSchemes[m_TouchscreenSchemeIndex];
+                if (m_PointerSchemeIndex == -1) m_PointerSchemeIndex = asset.FindControlSchemeIndex("Pointer");
+                return asset.controlSchemes[m_PointerSchemeIndex];
             }
         }
         public interface ITouchActions

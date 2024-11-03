@@ -4,6 +4,8 @@ using Factory.SystemFactory;
 using Feature.Destruction;
 using Feature.HUD;
 using Feature.Input;
+using Feature.Tap;
+using Feature.Wallet;
 
 namespace Feature
 {
@@ -16,6 +18,8 @@ namespace Feature
 		{
 			_systemFactory = systemFactory;
 			Add<InputFeature>();
+			Add<TapFeature>();
+			Add<WalletFeature>();
 			Add<HudFeature>();
 			Add<DestructionFeature>();
 		}

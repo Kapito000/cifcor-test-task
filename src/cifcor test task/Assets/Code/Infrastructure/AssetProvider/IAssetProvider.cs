@@ -7,5 +7,6 @@ namespace Infrastructure.AssetProvider
 	{
 		Canvas HudRoot();
 		EventSystem EventSystem();
+		GameObject TapTarget();
 	}
 }

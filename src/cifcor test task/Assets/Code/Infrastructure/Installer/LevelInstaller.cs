@@ -3,6 +3,7 @@ using Factory.Kit;
 using Factory.SystemFactory;
 using Feature;
 using Feature.HUD.Factory;
+using Feature.Tap.Factory;
 using Gameplay.Collisions;
 using Infrastructure.Boot;
 using Infrastructure.ECS;
@@ -58,6 +59,7 @@ namespace Infrastructure.Installer
 		void BindUiFactories()
 		{
 			Container.Bind<IHudFactory>().To<HudFactory>().AsSingle();
+			Container.Bind<ITapFactory>().To<TapFactory>().AsSingle();
 		}
 
 		void BindDevSceneRunner()

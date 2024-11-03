@@ -1,5 +1,6 @@
 ﻿using Common.Component;
 using Extensions;
+using Feature.Input.Component;
 using Leopotam.EcsLite;
 using UnityEngine;
 using Rigidbody2D = UnityEngine.Rigidbody2D;
@@ -93,6 +94,25 @@ namespace Infrastructure.ECS
 			ref var forParent = ref AddComponent<ForParent>();
 			forParent.Value = parent;
 			return this;
+		}
+
+		public void ReplaceTap(Vector2 screenPos)
+		{
+			ReplaceComponent<Tap>();
+			ref var pos = ref ReplaceComponent<ScreenPosition>();
+			pos.Value = screenPos;
+		}
+
+		public Camera Camera()
+		{
+			ref var cameraComponent = ref Get<CameraComponent>();
+			return cameraComponent.Value;
+		}
+
+		public Vector2 ScreenPosition()
+		{
+			ref var screenPosition = ref Get<ScreenPosition>();
+			return screenPosition.Value;
 		}
 	}
 }
