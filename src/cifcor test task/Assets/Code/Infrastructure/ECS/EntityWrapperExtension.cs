@@ -1,6 +1,7 @@
 ﻿using Common.Component;
 using Extensions;
 using Feature.Input.Component;
+using Feature.Wallet.Component;
 using Leopotam.EcsLite;
 using UnityEngine;
 using Rigidbody2D = UnityEngine.Rigidbody2D;
@@ -113,6 +114,12 @@ namespace Infrastructure.ECS
 		{
 			ref var screenPosition = ref Get<ScreenPosition>();
 			return screenPosition.Value;
+		}
+
+		public void AppendCurrency(int accruals)
+		{
+			ref var walletCurrency = ref Get<WalletCurrency>();
+			walletCurrency.Value += accruals;
 		}
 	}
 }
