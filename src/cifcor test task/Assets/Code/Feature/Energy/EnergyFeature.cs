@@ -8,6 +8,9 @@ namespace Feature.Energy
 		public EnergyFeature(ISystemFactory systemFactory) : base(systemFactory)
 		{
 			AddInit<CreateEnergySystem>();
+			AddUpdate<ChangeEnergySystem>();
+			AddUpdate<EnergyDisplaySystem>();
+			AddCleanup<Cleanup>();
 		}
 	}
 }

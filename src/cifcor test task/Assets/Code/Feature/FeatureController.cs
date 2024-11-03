@@ -21,8 +21,8 @@ namespace Feature
 			_systemFactory = systemFactory;
 			Add<InputFeature>();
 			Add<PlayerFeature>();
-			Add<EnergyFeature>();
 			Add<TapFeature>();
+			Add<EnergyFeature>();
 			Add<WalletFeature>();
 			Add<HudFeature>();
 			Add<DestructionFeature>();

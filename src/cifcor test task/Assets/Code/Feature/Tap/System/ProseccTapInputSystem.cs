@@ -46,7 +46,7 @@ namespace Feature.Tap.System
 				var energyValue = _energy.Energy();
 				if (energyValue <= 0)
 					continue;
-				_energy.SetEnergy(energyValue - _gameBalance.TapCost);
+				_energy.ReplaceChangeEnergyRequest(_gameBalance.TapCost);
 
 				_tapTarget.Replace<Taped>();
 			}

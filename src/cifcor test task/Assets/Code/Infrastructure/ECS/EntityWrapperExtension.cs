@@ -157,6 +157,19 @@ namespace Infrastructure.ECS
 			return energy.Value;
 		}
 
+		public int ChangeEnergyRequest()
+		{
+			ref var changeEnergyRequest = ref ReplaceComponent<ChangeEnergyRequest>();
+			return changeEnergyRequest.Value;
+		}
+		
+		public EntityWrapper ReplaceChangeEnergyRequest(int value)
+		{
+			ref var changeEnergyRequest = ref ReplaceComponent<ChangeEnergyRequest>();
+			changeEnergyRequest.Value += value;
+			return this;
+		}
+
 		public EntityWrapper SetEnergy(int value)
 		{
 			ref var energyComponent = ref Get<EnergyComponent>();
