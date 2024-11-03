@@ -31,7 +31,7 @@ namespace Feature.Tap.Factory
 			var instance = _kit.InstantiateService.Instantiate(prefab);
 			var e = _kit.EntityBehaviourFactory.InitEntityBehaviour(instance);
 			_tapTarget.SetEntity(e);
-			_tapHandler
+			_tapTarget
 				.Add<TapTarget>()
 				;
 			return e;

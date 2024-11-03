@@ -1,6 +1,8 @@
-﻿namespace Feature.Tap.Factory
+﻿using Factory;
+
+namespace Feature.Tap.Factory
 {
-	public interface ITapFactory
+	public interface ITapFactory : IFactory
 	{
 		int CreateTapHandler();
 		int CreateTapTarget();
