@@ -3,6 +3,7 @@ using Factory.Kit;
 using Factory.SystemFactory;
 using Feature;
 using Feature.HUD.Factory;
+using Feature.Player.Factory;
 using Feature.Tap.Factory;
 using Gameplay.Collisions;
 using Infrastructure.Boot;
@@ -80,6 +81,7 @@ namespace Infrastructure.Installer
 
 		void BindFactories()
 		{
+			Container.Bind<IPlayerFactory>().To<PlayerFactory>().AsSingle();
 			Container.Bind<IEntityBehaviourFactory>().To<EntityBehaviourFactory>()
 				.AsSingle();
 		}
