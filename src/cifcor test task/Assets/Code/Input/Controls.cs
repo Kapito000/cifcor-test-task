@@ -31,9 +31,18 @@ namespace Input
             ""actions"": [
                 {
                     ""name"": ""Tap"",
-                    ""type"": ""PassThrough"",
+                    ""type"": ""Button"",
                     ""id"": ""fded4687-274b-4f7f-9c58-eb8ba83f8a00"",
                     ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ScreenPos"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""40f62634-e26c-4cc4-b8a6-fabef4d25736"",
+                    ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
@@ -42,23 +51,23 @@ namespace Input
             ""bindings"": [
                 {
                     ""name"": """",
-                    ""id"": ""25b75c27-b7a2-4155-a6af-582f1642d524"",
-                    ""path"": ""<Touchscreen>/position"",
+                    ""id"": ""94d93c94-4064-47b1-bf02-27d3c1f50273"",
+                    ""path"": ""<Pointer>/press"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": "";Touchscreen"",
+                    ""groups"": """",
                     ""action"": ""Tap"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""dbc2d636-3a33-45b0-a3b1-ce6447c54222"",
+                    ""id"": ""f4eb72b6-79a7-4900-ab20-2e0d16e74be8"",
                     ""path"": ""<Pointer>/position"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Tap"",
+                    ""action"": ""ScreenPos"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -82,6 +91,7 @@ namespace Input
             // Touch
             m_Touch = asset.FindActionMap("Touch", throwIfNotFound: true);
             m_Touch_Tap = m_Touch.FindAction("Tap", throwIfNotFound: true);
+            m_Touch_ScreenPos = m_Touch.FindAction("ScreenPos", throwIfNotFound: true);
         }
 
         ~@Controls()
@@ -149,11 +159,13 @@ namespace Input
         private readonly InputActionMap m_Touch;
         private List<ITouchActions> m_TouchActionsCallbackInterfaces = new List<ITouchActions>();
         private readonly InputAction m_Touch_Tap;
+        private readonly InputAction m_Touch_ScreenPos;
         public struct TouchActions
         {
             private @Controls m_Wrapper;
             public TouchActions(@Controls wrapper) { m_Wrapper = wrapper; }
             public InputAction @Tap => m_Wrapper.m_Touch_Tap;
+            public InputAction @ScreenPos => m_Wrapper.m_Touch_ScreenPos;
             public InputActionMap Get() { return m_Wrapper.m_Touch; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -166,6 +178,9 @@ namespace Input
                 @Tap.started += instance.OnTap;
                 @Tap.performed += instance.OnTap;
                 @Tap.canceled += instance.OnTap;
+                @ScreenPos.started += instance.OnScreenPos;
+                @ScreenPos.performed += instance.OnScreenPos;
+                @ScreenPos.canceled += instance.OnScreenPos;
             }
 
             private void UnregisterCallbacks(ITouchActions instance)
@@ -173,6 +188,9 @@ namespace Input
                 @Tap.started -= instance.OnTap;
                 @Tap.performed -= instance.OnTap;
                 @Tap.canceled -= instance.OnTap;
+                @ScreenPos.started -= instance.OnScreenPos;
+                @ScreenPos.performed -= instance.OnScreenPos;
+                @ScreenPos.canceled -= instance.OnScreenPos;
             }
 
             public void RemoveCallbacks(ITouchActions instance)
@@ -202,6 +220,7 @@ namespace Input
         public interface ITouchActions
         {
             void OnTap(InputAction.CallbackContext context);
+            void OnScreenPos(InputAction.CallbackContext context);
         }
     }
 }
