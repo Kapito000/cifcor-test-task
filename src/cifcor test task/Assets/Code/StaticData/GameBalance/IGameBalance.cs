@@ -6,5 +6,6 @@
 		int MaxEnergy { get; }
 		int StartEnergy { get; }
 		int TapCost { get; }
+		float AutoTapInterval { get; }
 	}
 }

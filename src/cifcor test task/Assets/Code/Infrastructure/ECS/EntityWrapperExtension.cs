@@ -2,6 +2,7 @@
 using Extensions;
 using Feature.Energy.Component;
 using Feature.Input.Component;
+using Feature.Tap.Component;
 using Feature.Wallet.Component;
 using Leopotam.EcsLite;
 using UnityEngine;
@@ -123,6 +124,13 @@ namespace Infrastructure.ECS
 			walletCurrency.Value += accruals;
 		}
 
+		public EntityWrapper ChangeWalletBalanceRequest(int value)
+		{
+			ref var request = ref ReplaceComponent<ChangeBalanceRequest>();
+			request.Value += value;
+			return this;
+		}
+
 		public EntityWrapper AddEnergy(int value)
 		{
 			ref var energyComponent = ref AddComponent<EnergyComponent>();
@@ -148,6 +156,32 @@ namespace Infrastructure.ECS
 			ref var energyComponent = ref Get<EnergyComponent>();
 			energyComponent.Value = value;
 			return this;
+		}
+
+		public EntityWrapper AddAutoTapInterval(float value)
+		{
+			ref var autoTapInterval = ref AddComponent<AutoTapInterval>();
+			autoTapInterval.Value = value;
+			return this;
+		}
+
+		public float AutoTapTimer()
+		{
+			ref var autoTapTimer = ref Get<AutoTapTimer>();
+			return autoTapTimer.Value;
+		}
+
+		public EntityWrapper SetAutoTapTimer(float value)
+		{
+			ref var autoTapTimer = ref Get<AutoTapTimer>();
+			autoTapTimer.Value = value;
+			return this;
+		}
+
+		public float AutoTapInterval()
+		{
+			ref var autoTapInterval = ref Get<AutoTapInterval>();
+			return autoTapInterval.Value;
 		}
 	}
 }

@@ -1,5 +1,4 @@
-﻿using Feature.Tap.Component;
-using Feature.Wallet.Component;
+﻿using Feature.Wallet.Component;
 using Infrastructure.ECS;
 using Leopotam.EcsLite;
 using Leopotam.EcsLite.Di;
@@ -14,18 +13,16 @@ namespace Feature.Wallet.System
 		[Inject] EntityWrapper _tapTarget;
 		[Inject] IGameBalance _gameBalance;
 
-		readonly EcsFilterInject<Inc<TapTarget, Taped>> _tapTargetFilter;
-		readonly EcsFilterInject<Inc<WalletComponent, WalletCurrency>> _walletFilter;
+		readonly EcsFilterInject<
+			Inc<WalletComponent, WalletCurrency, ChangeBalanceRequest>> _walletFilter;
 
 		public void Run(IEcsSystems systems)
 		{
-			foreach (var target in _tapTargetFilter.Value)
 			foreach (var wallet in _walletFilter.Value)
 			{
 				_wallet.SetEntity(wallet);
-				_tapTarget.SetEntity(target);
-
 				_wallet.AppendCurrency(_gameBalance.AccrualByTap);
+				_wallet.Remove<ChangeBalanceRequest>();
 			}
 		}
 	}
