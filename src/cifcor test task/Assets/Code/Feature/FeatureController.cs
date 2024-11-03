@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Factory.SystemFactory;
 using Feature.Destruction;
+using Feature.Energy;
 using Feature.HUD;
 using Feature.Input;
 using Feature.Player;
@@ -20,6 +21,7 @@ namespace Feature
 			_systemFactory = systemFactory;
 			Add<InputFeature>();
 			Add<PlayerFeature>();
+			Add<EnergyFeature>();
 			Add<TapFeature>();
 			Add<WalletFeature>();
 			Add<HudFeature>();

@@ -14,7 +14,6 @@ using InstantiateService;
 using Leopotam.EcsLite;
 using LevelData;
 using UnityEngine;
-using UnityEngine.Tilemaps;
 using Zenject;
 
 namespace Infrastructure.Installer

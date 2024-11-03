@@ -1,5 +1,6 @@
 ﻿using Common.Component;
 using Extensions;
+using Feature.Energy.Component;
 using Feature.Input.Component;
 using Feature.Wallet.Component;
 using Leopotam.EcsLite;
@@ -120,6 +121,20 @@ namespace Infrastructure.ECS
 		{
 			ref var walletCurrency = ref Get<WalletCurrency>();
 			walletCurrency.Value += accruals;
+		}
+
+		public EntityWrapper AddEnergy(int value)
+		{
+			ref var energyComponent = ref AddComponent<EnergyComponent>();
+			energyComponent.Value = value;
+			return this;
+		}
+
+		public EntityWrapper AddMaxEnergy(int value)
+		{
+			ref var maxEnergy = ref AddComponent<MaxEnergy>();
+			maxEnergy.Value = value;
+			return this;
 		}
 	}
 }
