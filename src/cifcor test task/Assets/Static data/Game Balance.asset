@@ -13,3 +13,6 @@ MonoBehaviour:
   m_Name: Game Balance
   m_EditorClassIdentifier: 
   <AccrualByTap>k__BackingField: 1
+  <StartEnergy>k__BackingField: 100
+  <TapCost>k__BackingField: 2
+  <AutoTapInterval>k__BackingField: 2

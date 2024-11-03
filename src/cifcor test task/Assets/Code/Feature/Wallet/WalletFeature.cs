@@ -9,6 +9,8 @@ namespace Feature.Wallet
 		{
 			AddInit<CreateWalletSystem>();
 			AddUpdate<AccrualSystem>();
+			AddUpdate<DisplayBalanceSystem>();
+			AddCleanup<Cleanup>();
 		}
 	}
 }

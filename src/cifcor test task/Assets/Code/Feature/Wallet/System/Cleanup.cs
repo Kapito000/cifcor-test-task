@@ -7,22 +7,19 @@ using Zenject;
 
 namespace Feature.Wallet.System
 {
-	public sealed class AccrualSystem : IEcsRunSystem
+	public sealed class Cleanup : IEcsRunSystem
 	{
 		[Inject] EntityWrapper _wallet;
-		[Inject] EntityWrapper _tapTarget;
 		[Inject] IGameBalance _gameBalance;
 
-		readonly EcsFilterInject<
-			Inc<WalletComponent, WalletCurrency, ChangeBalanceRequest>> _walletFilter;
+		readonly EcsFilterInject<Inc<ChangeBalanceRequest>> _walletFilter;
 
 		public void Run(IEcsSystems systems)
 		{
 			foreach (var wallet in _walletFilter.Value)
 			{
 				_wallet.SetEntity(wallet);
-				var value = _wallet.ChangeBalanceRequest();
-				_wallet.AppendCurrency(value);
+				_wallet.Remove<ChangeBalanceRequest>();
 			}
 		}
 	}
