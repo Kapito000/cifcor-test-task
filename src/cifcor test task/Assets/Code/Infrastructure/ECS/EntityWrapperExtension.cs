@@ -100,7 +100,7 @@ namespace Infrastructure.ECS
 
 		public void ReplaceTap(Vector2 screenPos)
 		{
-			ReplaceComponent<Tap>();
+			ReplaceComponent<TapComponent>();
 			ref var pos = ref ReplaceComponent<ScreenPosition>();
 			pos.Value = screenPos;
 		}

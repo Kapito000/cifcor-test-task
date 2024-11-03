@@ -10,7 +10,7 @@ namespace Feature.Input.System
 	{
 		[Inject] EntityWrapper _tap;
 
-		readonly EcsFilterInject<Inc<Component.Tap, ScreenPosition>> _filter;
+		readonly EcsFilterInject<Inc<Component.TapComponent, ScreenPosition>> _filter;
 
 		public void Run(IEcsSystems systems)
 		{
@@ -18,7 +18,7 @@ namespace Feature.Input.System
 			{
 				_tap.SetEntity(e);
 				_tap
-					.Remove<Component.Tap>()
+					.Remove<Component.TapComponent>()
 					.Remove<ScreenPosition>()
 					;
 			}

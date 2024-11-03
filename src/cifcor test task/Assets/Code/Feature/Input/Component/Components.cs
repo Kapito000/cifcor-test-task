@@ -2,8 +2,9 @@
 
 namespace Feature.Input.Component
 {
-	public struct InputListener { }
+	public struct TapRequest { }
 	public struct TapListener { }
-	public struct Tap { }
+	public struct TapComponent { }
+	public struct InputListener { }
 	public struct ScreenPosition { public Vector2 Value; }
 }

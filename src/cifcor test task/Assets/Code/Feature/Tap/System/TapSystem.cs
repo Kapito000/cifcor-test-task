@@ -1,5 +1,4 @@
 ﻿using Common.Component;
-using Feature.Energy.Component;
 using Feature.Input.Component;
 using Feature.Tap.Component;
 using Gameplay.Collisions;
@@ -17,29 +16,18 @@ namespace Feature.Tap.System
 		[Inject] IGameBalance _gameBalance;
 		[Inject] EntityWrapper _camera;
 		[Inject] EntityWrapper _tapTarget;
-		[Inject] EntityWrapper _energy;
-		[Inject] EntityWrapper _listener;
+		[Inject] EntityWrapper _request;
 		[Inject] ICollisionRegistry _collisionRegistry;
 
-		readonly EcsFilterInject<Inc<EnergyComponent>> _energyFilter;
 		readonly EcsFilterInject<Inc<CameraComponent>> _cameraFilter;
-		readonly EcsFilterInject<
-				Inc<InputListener, TapListener, Input.Component.Tap, ScreenPosition>>
-			_listenerFilter;
+		readonly EcsFilterInject<Inc<ScreenPosition, TapRequest>> _requestFilter;
 
 		public void Run(IEcsSystems systems)
 		{
-			foreach (var listener in _listenerFilter.Value)
-			foreach (var energy in _energyFilter.Value)
+			foreach (var request in _requestFilter.Value)
 			foreach (var camera in _cameraFilter.Value)
 			{
-				_energy.SetEntity(energy);
-				var energyValue = _energy.Energy();
-				if (energyValue <= 0)
-					continue;
-				_energy.SetEnergy(energyValue - _gameBalance.TapCost);
-
-				var hit = Hit(listener, camera);
+				var hit = Hit(request, camera);
 				if (hit.collider == null)
 					continue;
 
@@ -61,8 +49,8 @@ namespace Feature.Tap.System
 
 		RaycastHit2D Hit(int listener, int cameraEntity)
 		{
-			_listener.SetEntity(listener);
-			var screenPos = _listener.ScreenPosition();
+			_request.SetEntity(listener);
+			var screenPos = _request.ScreenPosition();
 
 			_camera.SetEntity(cameraEntity);
 			Camera camera = _camera.Camera();

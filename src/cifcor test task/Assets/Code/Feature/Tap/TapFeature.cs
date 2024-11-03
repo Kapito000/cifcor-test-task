@@ -9,6 +9,7 @@ namespace Feature.Tap
 		{
 			AddInit<CreateTapHandler>();
 			AddInit<CreateTapTarget>();
+			AddUpdate<PlayerTapRequestSystem>();
 			AddUpdate<TapSystem>();
 			AddCleanup<Cleanup>();
 		}
