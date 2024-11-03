@@ -6,6 +6,7 @@ using Infrastructure.SceneLoader;
 using Input;
 using Input.Character;
 using LevelData;
+using StaticData.GameBalance;
 using StaticData.SceneNames;
 using UnityEngine;
 using Zenject;
@@ -14,6 +15,7 @@ namespace Infrastructure.Installer
 {
 	public class ProjectInstaller : MonoInstaller
 	{
+		[SerializeField] GameBalance _gameBalance;
 		[SerializeField] SceneNamesData _sceneNamesData;
 		[SerializeField] DirectLinkProvider _assetProvider;
 
@@ -59,6 +61,7 @@ namespace Infrastructure.Installer
 		{
 			Container.Bind<ISceneNameData>().FromInstance(_sceneNamesData)
 				.AsSingle();
+			Container.Bind<IGameBalance>().FromInstance(_gameBalance).AsSingle();
 		}
 
 		void BindGameStateMachine()
