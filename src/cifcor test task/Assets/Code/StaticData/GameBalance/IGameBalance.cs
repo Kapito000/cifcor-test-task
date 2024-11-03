@@ -5,5 +5,6 @@
 		int AccrualByTap { get; }
 		int MaxEnergy { get; }
 		int StartEnergy { get; }
+		int TapCost { get; }
 	}
 }
