@@ -42,17 +42,6 @@ namespace Input
             ""bindings"": [
                 {
                     ""name"": """",
-                    ""id"": ""ee88dcbb-5475-4db8-bf7b-8b66da37b3da"",
-                    ""path"": ""<Touchscreen>/touch0"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Sensor"",
-                    ""action"": ""Tap"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""fd3097cf-2d1d-427c-8ea4-8cbcc6313035"",
                     ""path"": ""<Touchscreen>/primaryTouch/position"",
                     ""interactions"": """",
