@@ -7,7 +7,6 @@ namespace StaticData.GameBalance
 	public sealed class GameBalance : ScriptableObject, IGameBalance
 	{
 		[field: SerializeField] public int AccrualByTap { get; private set; } = 1;
-		[field: SerializeField] public int MaxEnergy { get; private set; } = 100;
 		[field: SerializeField] public int StartEnergy { get; private set; } = 100;
 		[field: SerializeField] public int TapCost { get; private set; } = 1;
 		[field: SerializeField] public float AutoTapInterval { get; private set; } = 2;

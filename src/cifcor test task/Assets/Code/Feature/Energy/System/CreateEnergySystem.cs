@@ -21,7 +21,6 @@ namespace Feature.Energy.System
 				_player.SetEntity(e);
 				_player
 					.AddEnergy(_gameBalance.StartEnergy)
-					.AddMaxEnergy(_gameBalance.MaxEnergy)
 					;
 			}
 		}

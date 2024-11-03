@@ -151,13 +151,6 @@ namespace Infrastructure.ECS
 			return this;
 		}
 
-		public EntityWrapper AddMaxEnergy(int value)
-		{
-			ref var maxEnergy = ref AddComponent<MaxEnergy>();
-			maxEnergy.Value = value;
-			return this;
-		}
-
 		public int Energy()
 		{
 			ref var energy = ref Get<EnergyComponent>();
