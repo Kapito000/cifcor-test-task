@@ -26,22 +26,13 @@ namespace Input
     ""name"": ""Controls"",
     ""maps"": [
         {
-            ""name"": ""Character"",
+            ""name"": ""Touch"",
             ""id"": ""aa0d1b77-da2b-498a-91e4-59ead4c55946"",
             ""actions"": [
                 {
-                    ""name"": ""Movement"",
+                    ""name"": ""Tap"",
                     ""type"": ""PassThrough"",
-                    ""id"": ""b4110c98-755a-49be-a5f0-56cadc9b718c"",
-                    ""expectedControlType"": ""Vector2"",
-                    ""processors"": ""NormalizeVector2"",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""PutBomb"",
-                    ""type"": ""Button"",
-                    ""id"": ""ef5245eb-c610-4f99-8823-8544858c7e4d"",
+                    ""id"": ""fded4687-274b-4f7f-9c58-eb8ba83f8a00"",
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
@@ -50,145 +41,24 @@ namespace Input
             ],
             ""bindings"": [
                 {
-                    ""name"": ""WASD"",
-                    ""id"": ""97be136a-18f2-4774-80ac-2a00c8f24eb3"",
-                    ""path"": ""2DVector"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Movement"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""up"",
-                    ""id"": ""f0c8c480-74ba-49a6-9fe8-1311724b3c04"",
-                    ""path"": ""<Keyboard>/w"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard"",
-                    ""action"": ""Movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""7eaafdf0-3485-4da9-a1da-f260105c5d50"",
-                    ""path"": ""<Keyboard>/s"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard"",
-                    ""action"": ""Movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""36cf760b-845b-4bb2-a7b8-3b21cfd4b932"",
-                    ""path"": ""<Keyboard>/a"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard"",
-                    ""action"": ""Movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""1c4b81b0-c47a-4420-a538-c0f00981ae94"",
-                    ""path"": ""<Keyboard>/d"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard"",
-                    ""action"": ""Movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""Arrow"",
-                    ""id"": ""9f4045a1-49a5-4a73-844f-e163cb225570"",
-                    ""path"": ""2DVector"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Movement"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""up"",
-                    ""id"": ""c56aebaa-31db-4848-8594-d4493455c569"",
-                    ""path"": ""<Keyboard>/upArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard"",
-                    ""action"": ""Movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""f09c18ca-11b5-4973-aa54-a693f4c24b47"",
-                    ""path"": ""<Keyboard>/downArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard"",
-                    ""action"": ""Movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""fe9ef0e6-d38d-4c92-aa08-72b5e677c3ae"",
-                    ""path"": ""<Keyboard>/leftArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard"",
-                    ""action"": ""Movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""62d61e3d-1dbf-464e-b34d-b241bb8045bc"",
-                    ""path"": ""<Keyboard>/rightArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard"",
-                    ""action"": ""Movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
                     ""name"": """",
-                    ""id"": ""2b1b9cd8-54c4-4468-91dc-ff63b027e9af"",
-                    ""path"": ""<Gamepad>/rightStick"",
+                    ""id"": ""ee88dcbb-5475-4db8-bf7b-8b66da37b3da"",
+                    ""path"": ""<Touchscreen>/touch0"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Gamepad"",
-                    ""action"": ""Movement"",
+                    ""groups"": "";Sensor"",
+                    ""action"": ""Tap"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""fe83b662-3862-4391-9a66-4c72df1280b1"",
-                    ""path"": ""<Keyboard>/space"",
+                    ""id"": ""fd3097cf-2d1d-427c-8ea4-8cbcc6313035"",
+                    ""path"": ""<Touchscreen>/primaryTouch/position"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": "";Keyboard"",
-                    ""action"": ""PutBomb"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""d6dcafaf-4d94-4746-ae67-adb290142b24"",
-                    ""path"": ""<Gamepad>/buttonSouth"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Gamepad"",
-                    ""action"": ""PutBomb"",
+                    ""groups"": "";Touchscreen"",
+                    ""action"": ""Tap"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -197,22 +67,11 @@ namespace Input
     ],
     ""controlSchemes"": [
         {
-            ""name"": ""Keyboard"",
-            ""bindingGroup"": ""Keyboard"",
+            ""name"": ""Touchscreen"",
+            ""bindingGroup"": ""Touchscreen"",
             ""devices"": [
                 {
-                    ""devicePath"": ""<Keyboard>"",
-                    ""isOptional"": false,
-                    ""isOR"": false
-                }
-            ]
-        },
-        {
-            ""name"": ""Gamepad"",
-            ""bindingGroup"": ""Gamepad"",
-            ""devices"": [
-                {
-                    ""devicePath"": ""<Gamepad>"",
+                    ""devicePath"": ""<Touchscreen>"",
                     ""isOptional"": false,
                     ""isOR"": false
                 }
@@ -220,15 +79,14 @@ namespace Input
         }
     ]
 }");
-            // Character
-            m_Character = asset.FindActionMap("Character", throwIfNotFound: true);
-            m_Character_Movement = m_Character.FindAction("Movement", throwIfNotFound: true);
-            m_Character_PutBomb = m_Character.FindAction("PutBomb", throwIfNotFound: true);
+            // Touch
+            m_Touch = asset.FindActionMap("Touch", throwIfNotFound: true);
+            m_Touch_Tap = m_Touch.FindAction("Tap", throwIfNotFound: true);
         }
 
         ~@Controls()
         {
-            UnityEngine.Debug.Assert(!m_Character.enabled, "This will cause a leak and performance issues, Controls.Character.Disable() has not been called.");
+            UnityEngine.Debug.Assert(!m_Touch.enabled, "This will cause a leak and performance issues, Controls.Touch.Disable() has not been called.");
         }
 
         public void Dispose()
@@ -287,81 +145,63 @@ namespace Input
             return asset.FindBinding(bindingMask, out action);
         }
 
-        // Character
-        private readonly InputActionMap m_Character;
-        private List<ICharacterActions> m_CharacterActionsCallbackInterfaces = new List<ICharacterActions>();
-        private readonly InputAction m_Character_Movement;
-        private readonly InputAction m_Character_PutBomb;
-        public struct CharacterActions
+        // Touch
+        private readonly InputActionMap m_Touch;
+        private List<ITouchActions> m_TouchActionsCallbackInterfaces = new List<ITouchActions>();
+        private readonly InputAction m_Touch_Tap;
+        public struct TouchActions
         {
             private @Controls m_Wrapper;
-            public CharacterActions(@Controls wrapper) { m_Wrapper = wrapper; }
-            public InputAction @Movement => m_Wrapper.m_Character_Movement;
-            public InputAction @PutBomb => m_Wrapper.m_Character_PutBomb;
-            public InputActionMap Get() { return m_Wrapper.m_Character; }
+            public TouchActions(@Controls wrapper) { m_Wrapper = wrapper; }
+            public InputAction @Tap => m_Wrapper.m_Touch_Tap;
+            public InputActionMap Get() { return m_Wrapper.m_Touch; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
             public bool enabled => Get().enabled;
-            public static implicit operator InputActionMap(CharacterActions set) { return set.Get(); }
-            public void AddCallbacks(ICharacterActions instance)
+            public static implicit operator InputActionMap(TouchActions set) { return set.Get(); }
+            public void AddCallbacks(ITouchActions instance)
             {
-                if (instance == null || m_Wrapper.m_CharacterActionsCallbackInterfaces.Contains(instance)) return;
-                m_Wrapper.m_CharacterActionsCallbackInterfaces.Add(instance);
-                @Movement.started += instance.OnMovement;
-                @Movement.performed += instance.OnMovement;
-                @Movement.canceled += instance.OnMovement;
-                @PutBomb.started += instance.OnPutBomb;
-                @PutBomb.performed += instance.OnPutBomb;
-                @PutBomb.canceled += instance.OnPutBomb;
+                if (instance == null || m_Wrapper.m_TouchActionsCallbackInterfaces.Contains(instance)) return;
+                m_Wrapper.m_TouchActionsCallbackInterfaces.Add(instance);
+                @Tap.started += instance.OnTap;
+                @Tap.performed += instance.OnTap;
+                @Tap.canceled += instance.OnTap;
             }
 
-            private void UnregisterCallbacks(ICharacterActions instance)
+            private void UnregisterCallbacks(ITouchActions instance)
             {
-                @Movement.started -= instance.OnMovement;
-                @Movement.performed -= instance.OnMovement;
-                @Movement.canceled -= instance.OnMovement;
-                @PutBomb.started -= instance.OnPutBomb;
-                @PutBomb.performed -= instance.OnPutBomb;
-                @PutBomb.canceled -= instance.OnPutBomb;
+                @Tap.started -= instance.OnTap;
+                @Tap.performed -= instance.OnTap;
+                @Tap.canceled -= instance.OnTap;
             }
 
-            public void RemoveCallbacks(ICharacterActions instance)
+            public void RemoveCallbacks(ITouchActions instance)
             {
-                if (m_Wrapper.m_CharacterActionsCallbackInterfaces.Remove(instance))
+                if (m_Wrapper.m_TouchActionsCallbackInterfaces.Remove(instance))
                     UnregisterCallbacks(instance);
             }
 
-            public void SetCallbacks(ICharacterActions instance)
+            public void SetCallbacks(ITouchActions instance)
             {
-                foreach (var item in m_Wrapper.m_CharacterActionsCallbackInterfaces)
+                foreach (var item in m_Wrapper.m_TouchActionsCallbackInterfaces)
                     UnregisterCallbacks(item);
-                m_Wrapper.m_CharacterActionsCallbackInterfaces.Clear();
+                m_Wrapper.m_TouchActionsCallbackInterfaces.Clear();
                 AddCallbacks(instance);
             }
         }
-        public CharacterActions @Character => new CharacterActions(this);
-        private int m_KeyboardSchemeIndex = -1;
-        public InputControlScheme KeyboardScheme
+        public TouchActions @Touch => new TouchActions(this);
+        private int m_TouchscreenSchemeIndex = -1;
+        public InputControlScheme TouchscreenScheme
         {
             get
             {
-                if (m_KeyboardSchemeIndex == -1) m_KeyboardSchemeIndex = asset.FindControlSchemeIndex("Keyboard");
-                return asset.controlSchemes[m_KeyboardSchemeIndex];
+                if (m_TouchscreenSchemeIndex == -1) m_TouchscreenSchemeIndex = asset.FindControlSchemeIndex("Touchscreen");
+                return asset.controlSchemes[m_TouchscreenSchemeIndex];
             }
         }
-        private int m_GamepadSchemeIndex = -1;
-        public InputControlScheme GamepadScheme
+        public interface ITouchActions
         {
-            get
-            {
-                if (m_GamepadSchemeIndex == -1) m_GamepadSchemeIndex = asset.FindControlSchemeIndex("Gamepad");
-                return asset.controlSchemes[m_GamepadSchemeIndex];
-            }
-        }
-        public interface ICharacterActions
-        {
-            void OnMovement(InputAction.CallbackContext context);
-            void OnPutBomb(InputAction.CallbackContext context);
+            void OnTap(InputAction.CallbackContext context);
         }
     }
 }

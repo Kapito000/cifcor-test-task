@@ -5,7 +5,7 @@ namespace Infrastructure.GameStatus.State
 {
 	public sealed class GameLoop : State, IState
 	{
-		[Inject] ICharacterInput _characterInput;
+		[Inject] ITouch _touch;
 
 		public GameLoop(IGameStateMachine gameStateMachine) :
 			base(gameStateMachine)
@@ -13,12 +13,12 @@ namespace Infrastructure.GameStatus.State
 
 		public void Enter()
 		{
-			_characterInput.Enable();
+			_touch.Enable();
 		}
 
 		public void Exit()
 		{
-			_characterInput.Disable();
+			_touch.Disable();
 		}
 	}
 }

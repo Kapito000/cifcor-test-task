@@ -37,7 +37,7 @@ namespace Infrastructure.Installer
 		{
 			Container.Bind<Controls>().AsSingle();
 			Container.Bind<IInput>().To<CommonInput>().AsSingle();
-			Container.Bind<ICharacterInput>().To<CharacterInputService>().AsSingle();
+			Container.Bind<ITouch>().To<TouchHandler>().AsSingle();
 		}
 
 		void BindAssetProvider()
