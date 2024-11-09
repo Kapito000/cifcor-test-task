@@ -1,7 +1,8 @@
-﻿using PlayerProgress;
+﻿using Feature.HUD;
+using PlayerProgress;
 using Zenject;
 
-namespace Feature.HUD
+namespace Feature.Tap.HUD
 {
 	public sealed class EnergyDisplay : TextDisplay
 	{

@@ -4,7 +4,7 @@ using StaticData.GameBalance;
 using UnityEngine;
 using Zenject;
 
-namespace Feature
+namespace Feature.Tap
 {
 	public sealed class AutoTapHandler : MonoBehaviour
 	{

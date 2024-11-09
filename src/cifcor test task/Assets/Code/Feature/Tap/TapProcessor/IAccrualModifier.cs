@@ -1,4 +1,4 @@
-﻿namespace Feature.TapProcessor
+﻿namespace Feature.Tap.TapProcessor
 {
 	public interface IAccrualModifier
 	{

@@ -1,7 +1,7 @@
 ﻿using StaticData.GameBalance;
 using Zenject;
 
-namespace Feature.TapProcessor
+namespace Feature.Tap.TapProcessor
 {
 	public sealed class StandardAccrualModifier : IAccrualModifier
 	{

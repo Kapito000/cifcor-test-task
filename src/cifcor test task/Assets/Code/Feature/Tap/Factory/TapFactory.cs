@@ -2,7 +2,7 @@
 using UnityEngine;
 using Zenject;
 
-namespace Feature.TapFactory
+namespace Feature.Tap.Factory
 {
 	public sealed class TapFactory : ITapFactory
 	{

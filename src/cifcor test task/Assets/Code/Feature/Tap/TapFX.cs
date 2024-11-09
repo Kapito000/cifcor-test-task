@@ -1,7 +1,7 @@
 ﻿using TMPro;
 using UnityEngine;
 
-namespace Feature
+namespace Feature.Tap
 {
 	public sealed class TapFX : MonoBehaviour
 	{

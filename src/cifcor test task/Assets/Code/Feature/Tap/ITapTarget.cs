@@ -1,6 +1,6 @@
 ﻿using Common;
 
-namespace Feature
+namespace Feature.Tap
 {
 	public interface ITapTarget : ITransform
 	{ }

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Feature
+namespace Feature.Tap
 {
 	public sealed class TapTarget : MonoBehaviour, ITapTarget
 	{ }

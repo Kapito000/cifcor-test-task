@@ -1,7 +1,7 @@
 ﻿using Factory;
 using UnityEngine;
 
-namespace Feature.TapFactory
+namespace Feature.Tap.Factory
 {
 	public interface ITapFactory : IFactory
 	{

@@ -1,7 +1,7 @@
 ﻿using System;
 using Infrastructure;
 
-namespace Feature.TapProcessor
+namespace Feature.Tap.TapProcessor
 {
 	internal interface ITapProcessor : IService
 	{

@@ -1,10 +1,10 @@
-﻿using Feature.TapFactory;
-using Feature.TapProcessor;
+﻿using Feature.Tap.Factory;
+using Feature.Tap.TapProcessor;
 using Input.Character;
 using UnityEngine;
 using Zenject;
 
-namespace Feature
+namespace Feature.Tap
 {
 	public sealed class TapHandler : MonoBehaviour
 	{

@@ -1,6 +1,6 @@
 ﻿using Factory.Kit;
-using Feature.TapFactory;
-using Feature.TapProcessor;
+using Feature.Tap.Factory;
+using Feature.Tap.TapProcessor;
 using Infrastructure.Boot;
 using Infrastructure.GameStatus;
 using Infrastructure.GameStatus.State;
