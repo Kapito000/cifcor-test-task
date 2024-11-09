@@ -1,11 +1,11 @@
 ﻿using Infrastructure.Boot;
-using Infrastructure.ECS;
+using Infrastructure.SceneInitializer;
 
 namespace LevelData
 {
 	public sealed class StandardLevelData : ILevelData
 	{
-		public IEcsRunner EcsRunner { get; set; }
 		public IDevSceneRunner DevSceneRunner { get; set; }
+		public ISceneInitializer SceneInitializer { get; set; }
 	}
 }

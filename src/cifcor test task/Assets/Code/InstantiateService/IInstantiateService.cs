@@ -16,5 +16,8 @@ namespace InstantiateService
 			where TComponent : Component;
 		TComponent Instantiate<TComponent>(Object prefab, Vector3 pos)
 			where TComponent : Component;
+		TComponent Instantiate<TComponent>(TComponent prefab, Vector2 pos,
+			Transform parent)
+			where TComponent : Component;
 	}
 }

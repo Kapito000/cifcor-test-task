@@ -20,6 +20,14 @@ namespace InstantiateService
 					prefab, pos, quaternion.identity, null);
 		}
 
+		public TComponent Instantiate<TComponent>(TComponent prefab, Vector2 pos, Transform parent)
+			where TComponent : Component
+		{
+			return _container
+				.InstantiatePrefabForComponent<TComponent>(
+					prefab, pos, quaternion.identity, parent);
+		}
+
 
 		public GameObject Instantiate(Object prefab)
 		{

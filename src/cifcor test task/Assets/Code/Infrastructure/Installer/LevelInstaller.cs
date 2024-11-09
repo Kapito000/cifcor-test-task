@@ -1,38 +1,32 @@
-﻿using Factory.EntityBehaviourFactory;
-using Factory.Kit;
-using Factory.SystemFactory;
-using Feature;
-using Feature.HUD.Factory;
-using Feature.Player.Factory;
-using Feature.Tap.Factory;
-using Gameplay.Collisions;
+﻿using Factory.Kit;
+using Feature.TapFactory;
+using Feature.TapProcessor;
 using Infrastructure.Boot;
 using Infrastructure.GameStatus;
 using Infrastructure.GameStatus.State;
+using Infrastructure.SceneInitializer;
 using InstantiateService;
-using Leopotam.EcsLite;
 using LevelData;
+using UnityEngine;
 using Zenject;
 
 namespace Infrastructure.Installer
 {
 	public class LevelInstaller : MonoInstaller, IInitializable
 	{
+		[SerializeField] StandardSceneInitializer sceneInitializer; 
+		
 		[Inject] ILevelData _levelData;
 		[Inject] IGameStateMachine _gameStateMachine;
 
 		public override void InstallBindings()
 		{
 			BindInitializable();
-			BindWorld();
-			BindFactories();
+			TapFactory();
 			BindFactoryKit();
-			BindUiFactories();
 			BindInstantiator();
-			BindSystemFactory();
+			BindTapProcessor();
 			BindDevSceneRunner();
-			BindCollisionRegistry();
-			BindFeatureController();
 		}
 
 		public void Initialize()
@@ -43,20 +37,20 @@ namespace Infrastructure.Installer
 
 		void InitLevelData()
 		{
+			_levelData.SceneInitializer = sceneInitializer;
 			_levelData.DevSceneRunner = Container.Resolve<IDevSceneRunner>();
 		}
 
-		void BindCollisionRegistry()
+		void TapFactory()
 		{
-			Container.Bind<ICollisionRegistry>().To<CollisionRegistry>().AsSingle();
-		}
-
-		void BindUiFactories()
-		{
-			Container.Bind<IHudFactory>().To<HudFactory>().AsSingle();
 			Container.Bind<ITapFactory>().To<TapFactory>().AsSingle();
 		}
 
+		void BindTapProcessor()
+		{
+			Container.Bind<ITapProcessor>().To<StandardTapProcessor>().AsSingle();
+		}
+		
 		void BindDevSceneRunner()
 		{
 			Container.Bind<IDevSceneRunner>().FromComponentInHierarchy().AsSingle();
@@ -71,28 +65,6 @@ namespace Infrastructure.Installer
 		void BindFactoryKit()
 		{
 			Container.Bind<IFactoryKit>().To<FactoryKit>().AsSingle();
-		}
-
-		void BindFactories()
-		{
-			Container.Bind<IPlayerFactory>().To<PlayerFactory>().AsSingle();
-			Container.Bind<IEntityBehaviourFactory>().To<EntityBehaviourFactory>()
-				.AsSingle();
-		}
-
-		void BindFeatureController()
-		{
-			Container.Bind<FeatureController>().AsSingle();
-		}
-
-		void BindSystemFactory()
-		{
-			Container.Bind<ISystemFactory>().To<StandardSystemFactory>().AsSingle();
-		}
-
-		void BindWorld()
-		{
-			Container.Bind<EcsWorld>().FromInstance(new EcsWorld()).AsSingle();
 		}
 
 		void BindInitializable()

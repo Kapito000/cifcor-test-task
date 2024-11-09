@@ -1,5 +1,4 @@
-﻿using Factory.EntityBehaviourFactory;
-using Infrastructure.AssetProvider;
+﻿using Infrastructure.AssetProvider;
 using InstantiateService;
 using Zenject;
 
@@ -9,6 +8,5 @@ namespace Factory.Kit
 	{
 		[Inject] public IAssetProvider AssetProvider { get; }
 		[Inject] public IInstantiateService InstantiateService { get; }
-		[Inject] public IEntityBehaviourFactory EntityBehaviourFactory { get; }
 	}
 }

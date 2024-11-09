@@ -4,7 +4,9 @@
 	{
 		int AccrualByTap { get; }
 		int StartEnergy { get; }
-		int TapCost { get; }
+		int TapEnergyCost { get; }
+		int AutoTapAccrual { get; }
 		float AutoTapInterval { get; }
+		float AutoTapModifier { get; }
 	}
 }

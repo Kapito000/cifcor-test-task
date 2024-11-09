@@ -17,6 +17,7 @@ namespace Infrastructure.GameStatus.State
 			if (devSceneRunner != null && devSceneRunner.TryRunScene())
 				return;
 
+			_levelData.SceneInitializer.Init();
 			_gameStateMachine.Enter<GameLoop>();
 		}
 

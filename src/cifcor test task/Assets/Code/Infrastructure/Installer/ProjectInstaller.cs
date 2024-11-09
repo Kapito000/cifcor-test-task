@@ -1,11 +1,11 @@
 ﻿using Infrastructure.AssetProvider;
-using Infrastructure.ECS;
 using Infrastructure.GameStatus;
 using Infrastructure.GameStatus.State;
 using Infrastructure.SceneLoader;
 using Input;
 using Input.Character;
 using LevelData;
+using PlayerProgress;
 using StaticData.GameBalance;
 using StaticData.SceneNames;
 using UnityEngine;
@@ -23,16 +23,17 @@ namespace Infrastructure.Installer
 		{
 			BindLevelData();
 			BindStaticData();
+			PlayerProgress();
 			BindSceneLoader();
 			BindInputService();
-			BindEntityWrapper();
 			BindAssetProvider();
 			BindGameStateMachine();
 		}
 
-		void BindEntityWrapper()
+		void PlayerProgress()
 		{
-			Container.Bind<EntityWrapper>().AsTransient().MoveIntoAllSubContainers();
+			Container.Bind<IPlayerProgress>().FromMethod(CreatePlayerProgress)
+				.AsSingle();
 		}
 
 		void BindInputService()
@@ -74,6 +75,14 @@ namespace Infrastructure.Installer
 			Container.Bind<IState>().To<LaunchGame>().AsSingle();
 			Container.Bind<IState>().To<GameLoop>().AsSingle();
 			Container.Bind<IState>().To<GameExit>().AsSingle();
+		}
+
+		IPlayerProgress CreatePlayerProgress()
+		{
+			var obj = new GameObject("Player progress")
+				.AddComponent<StandardPlayerProgress>();
+			DontDestroyOnLoad(obj);
+			return obj;
 		}
 	}
 }
