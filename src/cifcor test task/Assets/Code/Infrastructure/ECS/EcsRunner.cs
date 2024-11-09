@@ -3,7 +3,6 @@ using Factory.SystemFactory;
 using Feature;
 using Leopotam.EcsLite;
 using LevelData;
-using Mitfart.LeoECSLite.UnityIntegration;
 using UnityEngine;
 using Zenject;
 
@@ -24,7 +23,6 @@ namespace Infrastructure.ECS
 			_supprotiveSystems
 #if UNITY_EDITOR
 				// .Add(new Leopotam.EcsLite.UnityEditor.EcsWorldDebugSystem())
-				.Add(new EcsWorldDebugSystem(null, new NameSettings(true)))
 #endif
 				.ConvertScene()
 				.Init();
