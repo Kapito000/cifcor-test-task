@@ -10,7 +10,7 @@ namespace Feature
 
 		void Awake()
 		{
-			Destroy(this, _life);
+			Destroy(this.gameObject, _life);
 		}
 
 		public void SetNum(int num)

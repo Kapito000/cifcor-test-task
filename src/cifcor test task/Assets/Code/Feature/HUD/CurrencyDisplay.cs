@@ -3,11 +3,10 @@ using Zenject;
 
 namespace Feature.HUD
 {
-
 	public sealed class CurrencyDisplay : TextDisplay
 	{
 		[Inject] IPlayerProgress _progress;
-		
+
 		protected override void OnAwake()
 		{
 			_progress.CurrencyValueChanged += OnCurrencyValueChanged;

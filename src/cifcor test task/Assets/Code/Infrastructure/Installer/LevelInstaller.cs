@@ -14,7 +14,8 @@ namespace Infrastructure.Installer
 {
 	public class LevelInstaller : MonoInstaller, IInitializable
 	{
-		[SerializeField] StandardSceneInitializer sceneInitializer; 
+		[SerializeField] Camera _camera; 
+		[SerializeField] StandardSceneInitializer _sceneInitializer; 
 		
 		[Inject] ILevelData _levelData;
 		[Inject] IGameStateMachine _gameStateMachine;
@@ -22,11 +23,13 @@ namespace Infrastructure.Installer
 		public override void InstallBindings()
 		{
 			BindInitializable();
-			TapFactory();
+			BindCamera();
+			BindTapFactory();
 			BindFactoryKit();
 			BindInstantiator();
 			BindTapProcessor();
 			BindDevSceneRunner();
+			BindAccrualModifier();
 		}
 
 		public void Initialize()
@@ -37,11 +40,21 @@ namespace Infrastructure.Installer
 
 		void InitLevelData()
 		{
-			_levelData.SceneInitializer = sceneInitializer;
+			_levelData.SceneInitializer = _sceneInitializer;
 			_levelData.DevSceneRunner = Container.Resolve<IDevSceneRunner>();
 		}
 
-		void TapFactory()
+		void BindAccrualModifier()
+		{
+			Container.Bind<IAccrualModifier>().To<StandardAccrualModifier>().AsSingle();
+		}
+
+		void BindCamera()
+		{
+			Container.BindInstance(_camera).AsSingle();
+		}
+
+		void BindTapFactory()
 		{
 			Container.Bind<ITapFactory>().To<TapFactory>().AsSingle();
 		}

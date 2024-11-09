@@ -1,4 +1,5 @@
-﻿using Infrastructure;
+﻿using System;
+using Infrastructure;
 
 namespace Feature.TapProcessor
 {
@@ -6,5 +7,6 @@ namespace Feature.TapProcessor
 	{
 		int ProcessTap();
 		bool IsCanTap();
+		event Action<int> AccrualCalculated;
 	}
 }

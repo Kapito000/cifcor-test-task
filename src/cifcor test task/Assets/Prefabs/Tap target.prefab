@@ -94,6 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4347419099948591280}
   - component: {fileID: 4620755624064064973}
+  - component: {fileID: 6630584661866394319}
   m_Layer: 0
   m_Name: Tap target
   m_TagString: Untagged
@@ -145,6 +146,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!114 &6630584661866394319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2811409064864479586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91d5c6a25a96463a92a8ae04e00448de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3758034459985800618
 GameObject:
   m_ObjectHideFlags: 0

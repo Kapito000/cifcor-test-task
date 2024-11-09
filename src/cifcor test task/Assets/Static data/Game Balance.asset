@@ -14,5 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <AccrualByTap>k__BackingField: 1
   <StartEnergy>k__BackingField: 100
-  <TapCost>k__BackingField: 2
+  <TapEnergyCost>k__BackingField: 1
+  <AutoTapAccrual>k__BackingField: 100
   <AutoTapInterval>k__BackingField: 2
+  <AutoTapModifier>k__BackingField: 0.1
