@@ -7,21 +7,17 @@ using Feature.Player.Factory;
 using Feature.Tap.Factory;
 using Gameplay.Collisions;
 using Infrastructure.Boot;
-using Infrastructure.ECS;
 using Infrastructure.GameStatus;
 using Infrastructure.GameStatus.State;
 using InstantiateService;
 using Leopotam.EcsLite;
 using LevelData;
-using UnityEngine;
 using Zenject;
 
 namespace Infrastructure.Installer
 {
 	public class LevelInstaller : MonoInstaller, IInitializable
 	{
-		[SerializeField] EcsRunner _ecsRunner;
-
 		[Inject] ILevelData _levelData;
 		[Inject] IGameStateMachine _gameStateMachine;
 
@@ -47,7 +43,6 @@ namespace Infrastructure.Installer
 
 		void InitLevelData()
 		{
-			_levelData.EcsRunner = _ecsRunner;
 			_levelData.DevSceneRunner = Container.Resolve<IDevSceneRunner>();
 		}
 
